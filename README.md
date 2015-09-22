@@ -21,4 +21,4 @@ CHANGES FROM PREVIOUS VERSION:
 Rewrote to take advantage of modern Cocoa Touch features.
 
 ===========================================================================
-Copyright (C) 2015 YunTu All rights reserved.
+Copyright (C) 2015 ZJ All rights reserved.
