@@ -31,6 +31,8 @@
 		66ED4B7D1B60CEBD00E18480 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66ED4B7B1B60CEBD00E18480 /* LaunchScreen.xib */; };
 		66ED4B891B60CEBD00E18480 /* ZJCoreAnimationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66ED4B881B60CEBD00E18480 /* ZJCoreAnimationTests.m */; };
 		66ED4B941B60D02200E18480 /* ZJAnchorPointViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66ED4B931B60D02200E18480 /* ZJAnchorPointViewController.m */; };
+		66F30DF51BB15C1E002711CD /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 66F30DF31BB15C1E002711CD /* LICENSE */; settings = {ASSET_TAGS = (); }; };
+		66F30DF61BB15C1E002711CD /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 66F30DF41BB15C1E002711CD /* README.md */; settings = {ASSET_TAGS = (); }; };
 		66F716DA1B91A6EC00DDFAFD /* ZJCALayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F716D91B91A6EC00DDFAFD /* ZJCALayerViewController.m */; };
 		66F716DD1B91A70E00DDFAFD /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F716DC1B91A70E00DDFAFD /* UIViewExt.m */; };
 		66F716DF1B91A91A00DDFAFD /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 66F716DE1B91A91A00DDFAFD /* 1.jpg */; };
@@ -81,6 +83,8 @@
 		66ED4B881B60CEBD00E18480 /* ZJCoreAnimationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJCoreAnimationTests.m; sourceTree = "<group>"; };
 		66ED4B921B60D02200E18480 /* ZJAnchorPointViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJAnchorPointViewController.h; sourceTree = "<group>"; };
 		66ED4B931B60D02200E18480 /* ZJAnchorPointViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJAnchorPointViewController.m; sourceTree = "<group>"; };
+		66F30DF31BB15C1E002711CD /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		66F30DF41BB15C1E002711CD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		66F716D81B91A6EC00DDFAFD /* ZJCALayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCALayerViewController.h; sourceTree = "<group>"; };
 		66F716D91B91A6EC00DDFAFD /* ZJCALayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCALayerViewController.m; sourceTree = "<group>"; };
 		66F716DB1B91A70E00DDFAFD /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
@@ -206,6 +210,8 @@
 		66ED4B691B60CEBD00E18480 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				66F30DF31BB15C1E002711CD /* LICENSE */,
+				66F30DF41BB15C1E002711CD /* README.md */,
 				66ED4B6A1B60CEBD00E18480 /* Info.plist */,
 				66ED4B6B1B60CEBD00E18480 /* main.m */,
 			);
@@ -340,6 +346,7 @@
 				66DB33951B9C427000597348 /* bg4.png in Resources */,
 				66DB33971B9C427000597348 /* bg6.png in Resources */,
 				66ED4B7A1B60CEBD00E18480 /* Images.xcassets in Resources */,
+				66F30DF51BB15C1E002711CD /* LICENSE in Resources */,
 				66DB336D1B9C1C5A00597348 /* red.png in Resources */,
 				66DB33901B9C427000597348 /* fg5.png in Resources */,
 				66DB33921B9C427000597348 /* bg1.png in Resources */,
@@ -366,6 +373,7 @@
 			files = (
 				66ED4B6F1B60CEBD00E18480 /* AppDelegate.m in Sources */,
 				66DB336A1B9C1C3D00597348 /* ZJFrameBoundsViewController.m in Sources */,
+				66F30DF61BB15C1E002711CD /* README.md in Sources */,
 				66ED4B721B60CEBD00E18480 /* ZJCoreAnimation.xcdatamodeld in Sources */,
 				66F716DD1B91A70E00DDFAFD /* UIViewExt.m in Sources */,
 				66ED4B751B60CEBD00E18480 /* ViewController.m in Sources */,
