@@ -3,7 +3,7 @@
 ===========================================================================
 DESCRIPTION:
 
-ZJCoreAnimation demonstrates usage of CoreAnimation Framework capture API for recording movies, taking still images, and switching cameras. It runs only on an actual device, either an iPad or iPhone, and cannot be run in the simulator.
+ZJCoreAnimation demonstrates usage of CoreAnimation Framework.
 
 ===========================================================================
 BUILD REQUIREMENTS:
