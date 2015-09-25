@@ -69,8 +69,26 @@ static NSString *LAYERCELLID = @"cellID";
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     NSArray *titles = _titles[indexPath.row];
+    @try {
+        @try {
+            [self performSegueWithIdentifier:titles.firstObject sender:nil];
+        }
+        @catch (NSException *exception) {
+            @throw exception;
+        }
+        @finally {
+            NSLog(@"内层@finally");
+        }
+    }
+    @catch (NSException *exception) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"功能尚未完成此项" message:@"\n继续努力" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        NSLog(@"exception : %@, %@", exception.name, exception.reason);
+    }
+    @finally {
+        NSLog(@"外层@finally");
 
-    [self performSegueWithIdentifier:titles.firstObject sender:nil];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

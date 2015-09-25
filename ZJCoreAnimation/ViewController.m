@@ -48,7 +48,7 @@ static NSString *CELLID = @"cellID";
     
     NSArray *s1VC = @[
                       [ZJFlipAnimationViewController new],
-                      [self.storyboard instantiateViewControllerWithIdentifier:@"ZJCALayerPlayer"],
+                      @"ZJCALayerPlayer",
                       ];
     _vcs = @[s0VC, s1VC];
 }
@@ -83,11 +83,13 @@ static NSString *CELLID = @"cellID";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    UIViewController *vc = _vcs[indexPath.section][indexPath.row];
+    id vc = _vcs[indexPath.section][indexPath.row];
     
-    if (vc) {
-        vc.view.backgroundColor = [UIColor whiteColor];
+    if ([vc isKindOfClass:[UIViewController class]]) {
+        ((UIViewController *)vc).view.backgroundColor = [UIColor whiteColor];
         [self.navigationController pushViewController:vc animated:YES];
+    }else {
+        [self performSegueWithIdentifier:vc sender:nil];
     }
 }
 

@@ -37,6 +37,9 @@
 		66ED4B7D1B60CEBD00E18480 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66ED4B7B1B60CEBD00E18480 /* LaunchScreen.xib */; };
 		66ED4B891B60CEBD00E18480 /* ZJCoreAnimationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66ED4B881B60CEBD00E18480 /* ZJCoreAnimationTests.m */; };
 		66ED4B941B60D02200E18480 /* ZJAnchorPointViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66ED4B931B60D02200E18480 /* ZJAnchorPointViewController.m */; };
+		66EE967D1BB4EA2C00E69D5B /* 1434511542665314.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 66EE967C1BB4EA2C00E69D5B /* 1434511542665314.jpg */; settings = {ASSET_TAGS = (); }; };
+		66EE96811BB4F21200E69D5B /* ZJAVPlayerLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EE96801BB4F21200E69D5B /* ZJAVPlayerLayerViewController.m */; settings = {ASSET_TAGS = (); }; };
+		66EE96851BB5231E00E69D5B /* ZJCAGradientLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EE96841BB5231E00E69D5B /* ZJCAGradientLayerViewController.m */; settings = {ASSET_TAGS = (); }; };
 		66F30DF51BB15C1E002711CD /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 66F30DF31BB15C1E002711CD /* LICENSE */; settings = {ASSET_TAGS = (); }; };
 		66F30DF61BB15C1E002711CD /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 66F30DF41BB15C1E002711CD /* README.md */; settings = {ASSET_TAGS = (); }; };
 		66F716DA1B91A6EC00DDFAFD /* ZJCALayerFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F716D91B91A6EC00DDFAFD /* ZJCALayerFirstViewController.m */; };
@@ -100,6 +103,11 @@
 		66ED4B881B60CEBD00E18480 /* ZJCoreAnimationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJCoreAnimationTests.m; sourceTree = "<group>"; };
 		66ED4B921B60D02200E18480 /* ZJAnchorPointViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJAnchorPointViewController.h; sourceTree = "<group>"; };
 		66ED4B931B60D02200E18480 /* ZJAnchorPointViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJAnchorPointViewController.m; sourceTree = "<group>"; };
+		66EE967C1BB4EA2C00E69D5B /* 1434511542665314.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1434511542665314.jpg; sourceTree = "<group>"; };
+		66EE967F1BB4F21200E69D5B /* ZJAVPlayerLayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJAVPlayerLayerViewController.h; sourceTree = "<group>"; };
+		66EE96801BB4F21200E69D5B /* ZJAVPlayerLayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJAVPlayerLayerViewController.m; sourceTree = "<group>"; };
+		66EE96831BB5231E00E69D5B /* ZJCAGradientLayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCAGradientLayerViewController.h; sourceTree = "<group>"; };
+		66EE96841BB5231E00E69D5B /* ZJCAGradientLayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCAGradientLayerViewController.m; sourceTree = "<group>"; };
 		66F30DF31BB15C1E002711CD /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		66F30DF41BB15C1E002711CD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		66F716D81B91A6EC00DDFAFD /* ZJCALayerFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCALayerFirstViewController.h; sourceTree = "<group>"; };
@@ -131,11 +139,12 @@
 		665EB8A31BB2B3EF00AE81D2 /* LayerPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				66E59C671BB393C100E25B61 /* colorfulStreak.m4v */,
 				665EB8A41BB2B42D00AE81D2 /* ZJCALayerPlayerListViewController.h */,
 				665EB8A51BB2B42D00AE81D2 /* ZJCALayerPlayerListViewController.m */,
 				66E59C731BB3FA4A00E25B61 /* CALayer */,
 				66E59C721BB3FA2F00E25B61 /* CAScrollLayer */,
+				66EE967E1BB4F1E200E69D5B /* AVPlayerLayer */,
+				66EE96821BB522F200E69D5B /* CAGradientLayer */,
 			);
 			name = LayerPlayer;
 			sourceTree = "<group>";
@@ -144,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				66DB336C1B9C1C5A00597348 /* red.png */,
+				66EE967C1BB4EA2C00E69D5B /* 1434511542665314.jpg */,
 				66DB33681B9C1C3D00597348 /* ZJFrameBoundsViewController.h */,
 				66DB33691B9C1C3D00597348 /* ZJFrameBoundsViewController.m */,
 			);
@@ -296,6 +306,25 @@
 			name = AnchorPoint;
 			sourceTree = "<group>";
 		};
+		66EE967E1BB4F1E200E69D5B /* AVPlayerLayer */ = {
+			isa = PBXGroup;
+			children = (
+				66E59C671BB393C100E25B61 /* colorfulStreak.m4v */,
+				66EE967F1BB4F21200E69D5B /* ZJAVPlayerLayerViewController.h */,
+				66EE96801BB4F21200E69D5B /* ZJAVPlayerLayerViewController.m */,
+			);
+			name = AVPlayerLayer;
+			sourceTree = "<group>";
+		};
+		66EE96821BB522F200E69D5B /* CAGradientLayer */ = {
+			isa = PBXGroup;
+			children = (
+				66EE96831BB5231E00E69D5B /* ZJCAGradientLayerViewController.h */,
+				66EE96841BB5231E00E69D5B /* ZJCAGradientLayerViewController.m */,
+			);
+			name = CAGradientLayer;
+			sourceTree = "<group>";
+		};
 		66F716D71B91A18200DDFAFD /* CALayer */ = {
 			isa = PBXGroup;
 			children = (
@@ -395,6 +424,7 @@
 				66DB338E1B9C427000597348 /* fg3.png in Resources */,
 				66DB338C1B9C427000597348 /* fg1.png in Resources */,
 				66E59C681BB393C100E25B61 /* colorfulStreak.m4v in Resources */,
+				66EE967D1BB4EA2C00E69D5B /* 1434511542665314.jpg in Resources */,
 				66DB338F1B9C427000597348 /* fg4.png in Resources */,
 				66DB33951B9C427000597348 /* bg4.png in Resources */,
 				66DB33971B9C427000597348 /* bg6.png in Resources */,
@@ -438,6 +468,8 @@
 				66DB339A1B9C432D00597348 /* ZJFlipAnimationViewController.m in Sources */,
 				66E59C711BB3F9BD00E25B61 /* ZJCAScrollLayerViewController.m in Sources */,
 				66F716DA1B91A6EC00DDFAFD /* ZJCALayerFirstViewController.m in Sources */,
+				66EE96851BB5231E00E69D5B /* ZJCAGradientLayerViewController.m in Sources */,
+				66EE96811BB4F21200E69D5B /* ZJAVPlayerLayerViewController.m in Sources */,
 				66ED4B6C1B60CEBD00E18480 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

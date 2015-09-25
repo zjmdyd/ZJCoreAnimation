@@ -28,9 +28,15 @@
     _scrollingViewLayer.scrollMode = kCAScrollBoth;
     
     self.scrollingView.layer.borderWidth = 2.0;
+    self.scrollingView.layer.borderColor = [UIColor yellowColor].CGColor;
     
-    NSLog(@"layer = %@", self.scrollingView.layer);
-    NSLog(@"subLayers = %@", self.scrollingView.layer.sublayers.firstObject);
+    CALayer *layer = self.scrollingView.layer.sublayers.firstObject;
+    layer.borderColor = [UIColor redColor].CGColor;
+    layer.borderWidth = 2.0;
+    
+    NSLog(@"layer = %@", self.scrollingView.layer);                             //  <CAScrollLayer: 0x14e73ed0>
+    NSLog(@"subLayers = %@", self.scrollingView.layer.sublayers.firstObject);   // <CALayer: 0x14e7b370>
+    [_scrollingViewLayer scrollToPoint:CGPointMake(0, -30)];
 }
 
 - (IBAction)scrollingSwitchChanged:(UISwitch *)sender {
@@ -46,18 +52,21 @@
 }
 
 - (IBAction)panRecognized:(UIPanGestureRecognizer *)sender {
-    CGPoint newPoint = self.scrollingView.bounds.origin;    // bounds是根据layer的frame来确定的,当向上滚动,layer在原frame的上方,newPoint为正,向下反之
+    CGPoint newPoint = self.scrollingView.bounds.origin;    // bounds是根据layer的frame来确定的,当向上滚动,layer在原frame的上方,所以newPoint为正,向下滚动则反之
     NSLog(@"newPoint1 = %@", NSStringFromCGPoint(newPoint));
-    
+    NSLog(@"bounds = %@", NSStringFromCGRect(self.scrollingView.bounds));
+    NSLog(@"frame = %@", NSStringFromCGRect(self.scrollingView.frame));
     NSLog(@"location = %@", NSStringFromCGPoint([sender translationInView:self.scrollingView]));
 
-    newPoint.x -= [sender translationInView:self.scrollingView].x;
+    newPoint.x -= [sender translationInView:self.scrollingView].x;  // 为什是减,因为滚动视图向上滚动时的偏移量增加
     newPoint.y -= [sender translationInView:self.scrollingView].y;
     
     NSLog(@"newPoint2 = %@", NSStringFromCGPoint(newPoint));
     
     [sender setTranslation:CGPointZero inView:self.scrollingView];
-    [_scrollingViewLayer scrollPoint:newPoint]; //
+    [_scrollingViewLayer scrollToPoint:newPoint]; //
+    
+    NSLog(@"\n\n");
 }
 /*
 
@@ -71,6 +80,18 @@
  
  */
 
+/*
+ The translation of the pan gesture in the coordinate system of the specified view.
+ 
+ Return Value
+ A point identifying the new location of a view in the coordinate system of its designated superview.
+ 字面理解是：
+ 在指定的视图坐标系统中转换(拖动？) pan gesture
+ 返回参数：返回一个明确的新的坐标位置，在指定的父视图坐标系统中
+ 简单的理解就是
+ 该方法返回在横坐标上、纵坐标上拖动了多少像素
+ 因为拖动起来一直是在递增，所以每次都要用setTranslation:方法制0这样才不至于不受控制般滑动出视图
+ */
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

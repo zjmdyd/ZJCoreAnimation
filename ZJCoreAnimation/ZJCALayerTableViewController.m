@@ -52,7 +52,7 @@ NS_ENUM(NSInteger, Switch) {
     HiddenSwitch,
 };
 
-NS_ENUM(NSInteger, Slider) {
+NS_ENUM(NSInteger, SLIDER) {
     OpacitySlider,
     CornerRadiusSlider,
     BorderWidthSlider,
