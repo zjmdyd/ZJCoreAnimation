@@ -10,12 +10,13 @@
 
 #import "ZJFrameBoundsViewController.h"
 #import "ZJAnchorPointViewController.h"
-#import "ZJCALayerViewController.h"
+#import "ZJCALayerFirstViewController.h"
 
+// Demo篇
 #import "ZJFlipAnimationViewController.h"
 
 @interface ViewController ()<UITableViewDataSource, UITableViewDelegate> {
-    NSArray *_sectionTitles, *_titles;
+    NSArray *_sectionTitles, *_titles, *_vcs;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -36,8 +37,20 @@ static NSString *CELLID = @"cellID";
     _sectionTitles = @[@"基础知识篇", @"Demo篇"];
     
     NSArray *s1 = @[@"FrameAndBounds", @"AnchoPoint", @"CALayer"];
-    NSArray *s2 = @[@"FlipAnimation"];
+    NSArray *s2 = @[@"FlipAnimation", @"CALayerPlayer"];
     _titles = @[s1, s2];
+    
+    NSArray *s0VC = @[
+                      [ZJFrameBoundsViewController new],
+                      [ZJAnchorPointViewController new],
+                      [ZJCALayerFirstViewController new],
+                      ];
+    
+    NSArray *s1VC = @[
+                      [ZJFlipAnimationViewController new],
+                      [self.storyboard instantiateViewControllerWithIdentifier:@"ZJCALayerPlayer"],
+                      ];
+    _vcs = @[s0VC, s1VC];
 }
 
 #pragma mark - UITableViewDataSource
@@ -70,22 +83,7 @@ static NSString *CELLID = @"cellID";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    NSInteger row = indexPath.row;
-    UIViewController *vc;
-    
-    if (indexPath.section == 0) {
-        if (row == 0) {
-            vc = [[ZJFrameBoundsViewController alloc] init];
-        }else if (row == 1) {
-            vc = [[ZJAnchorPointViewController alloc] init];
-        }else if (row == 2) {
-            vc = [[ZJCALayerViewController alloc] init];
-        }
-    }else if (indexPath.section == 1){
-        if (row == 0) {
-            vc = [[ZJFlipAnimationViewController alloc] init];
-        }
-    }
+    UIViewController *vc = _vcs[indexPath.section][indexPath.row];
     
     if (vc) {
         vc.view.backgroundColor = [UIColor whiteColor];

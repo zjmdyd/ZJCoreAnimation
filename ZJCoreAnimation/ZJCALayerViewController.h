@@ -2,12 +2,15 @@
 //  ZJCALayerViewController.h
 //  ZJCoreAnimation
 //
-//  Created by YunTu on 15/8/29.
-//  Copyright (c) 2015年 YunTu. All rights reserved.
+//  Created by YunTu on 9/24/15.
+//  Copyright © 2015 YunTu. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
 @interface ZJCALayerViewController : UIViewController
+
+@property (nonatomic, strong) CALayer *layer;
+@property (nonatomic, assign) CGImageRef star;
 
 @end
