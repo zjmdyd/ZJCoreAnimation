@@ -7,7 +7,6 @@
 //
 
 #import "ZJFlipAnimationViewController.h"
-#import "UIViewExt.h"
 
 @interface ZJFlipAnimationViewController (){
     NSArray *_bgImgs;

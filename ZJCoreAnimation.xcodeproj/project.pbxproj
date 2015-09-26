@@ -28,6 +28,7 @@
 		66E59C6E1BB3D1D500E25B61 /* ZJCALayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E59C6D1BB3D1D500E25B61 /* ZJCALayerViewController.m */; settings = {ASSET_TAGS = (); }; };
 		66E59C711BB3F9BD00E25B61 /* ZJCAScrollLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E59C701BB3F9BD00E25B61 /* ZJCAScrollLayerViewController.m */; settings = {ASSET_TAGS = (); }; };
 		66E59C761BB3FA7E00E25B61 /* ScrollingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E59C751BB3FA7E00E25B61 /* ScrollingView.m */; settings = {ASSET_TAGS = (); }; };
+		66EC78331BB62E8A00E15E7B /* ZJCAReplicatorLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EC78321BB62E8A00E15E7B /* ZJCAReplicatorLayerViewController.m */; settings = {ASSET_TAGS = (); }; };
 		66ED4B6C1B60CEBD00E18480 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66ED4B6B1B60CEBD00E18480 /* main.m */; };
 		66ED4B6F1B60CEBD00E18480 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66ED4B6E1B60CEBD00E18480 /* AppDelegate.m */; };
 		66ED4B721B60CEBD00E18480 /* ZJCoreAnimation.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 66ED4B701B60CEBD00E18480 /* ZJCoreAnimation.xcdatamodeld */; };
@@ -87,6 +88,9 @@
 		66E59C701BB3F9BD00E25B61 /* ZJCAScrollLayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCAScrollLayerViewController.m; sourceTree = "<group>"; };
 		66E59C741BB3FA7E00E25B61 /* ScrollingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollingView.h; sourceTree = "<group>"; };
 		66E59C751BB3FA7E00E25B61 /* ScrollingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollingView.m; sourceTree = "<group>"; };
+		66EC78311BB62E8A00E15E7B /* ZJCAReplicatorLayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCAReplicatorLayerViewController.h; sourceTree = "<group>"; };
+		66EC78321BB62E8A00E15E7B /* ZJCAReplicatorLayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCAReplicatorLayerViewController.m; sourceTree = "<group>"; };
+		66EC78351BB6463800E15E7B /* ZJCoreAnimation.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCoreAnimation.pch; sourceTree = "<group>"; };
 		66ED4B661B60CEBD00E18480 /* ZJCoreAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZJCoreAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66ED4B6A1B60CEBD00E18480 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66ED4B6B1B60CEBD00E18480 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -145,6 +149,7 @@
 				66E59C721BB3FA2F00E25B61 /* CAScrollLayer */,
 				66EE967E1BB4F1E200E69D5B /* AVPlayerLayer */,
 				66EE96821BB522F200E69D5B /* CAGradientLayer */,
+				66EC78301BB62E7B00E15E7B /* CAReplicatorLayer */,
 			);
 			name = LayerPlayer;
 			sourceTree = "<group>";
@@ -230,6 +235,15 @@
 			name = CALayer;
 			sourceTree = "<group>";
 		};
+		66EC78301BB62E7B00E15E7B /* CAReplicatorLayer */ = {
+			isa = PBXGroup;
+			children = (
+				66EC78311BB62E8A00E15E7B /* ZJCAReplicatorLayerViewController.h */,
+				66EC78321BB62E8A00E15E7B /* ZJCAReplicatorLayerViewController.m */,
+			);
+			name = CAReplicatorLayer;
+			sourceTree = "<group>";
+		};
 		66ED4B5D1B60CEBD00E18480 = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +290,7 @@
 				66F30DF41BB15C1E002711CD /* README.md */,
 				66ED4B6A1B60CEBD00E18480 /* Info.plist */,
 				66ED4B6B1B60CEBD00E18480 /* main.m */,
+				66EC78351BB6463800E15E7B /* ZJCoreAnimation.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -457,6 +472,7 @@
 				665EB8A61BB2B42D00AE81D2 /* ZJCALayerPlayerListViewController.m in Sources */,
 				66E59C6B1BB3AC7500E25B61 /* ZJCALayerTableViewController.m in Sources */,
 				66E59C761BB3FA7E00E25B61 /* ScrollingView.m in Sources */,
+				66EC78331BB62E8A00E15E7B /* ZJCAReplicatorLayerViewController.m in Sources */,
 				66ED4B6F1B60CEBD00E18480 /* AppDelegate.m in Sources */,
 				66DB336A1B9C1C3D00597348 /* ZJFrameBoundsViewController.m in Sources */,
 				66F30DF61BB15C1E002711CD /* README.md in Sources */,
@@ -597,6 +613,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ZJCoreAnimation/ZJCoreAnimation.pch";
 				INFOPLIST_FILE = ZJCoreAnimation/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -609,6 +627,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ZJCoreAnimation/ZJCoreAnimation.pch";
 				INFOPLIST_FILE = ZJCoreAnimation/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

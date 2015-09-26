@@ -7,7 +7,6 @@
 //
 
 #import "ZJCALayerTableViewController.h"
-#import "UIViewExt.h"
 
 @interface ZJCALayerTableViewController () <UIPickerViewDataSource, UIPickerViewDelegate> {
     NSArray *_contentsGravityValues;

@@ -81,7 +81,7 @@ static NSString *LAYERCELLID = @"cellID";
         }
     }
     @catch (NSException *exception) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"功能尚未完成此项" message:@"\n继续努力" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"此功能尚未实现" message:@"革命尚未成功,同志仍需努力" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
         NSLog(@"exception : %@, %@", exception.name, exception.reason);
     }
