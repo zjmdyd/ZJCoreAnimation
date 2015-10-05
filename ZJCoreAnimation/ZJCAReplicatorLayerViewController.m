@@ -21,7 +21,8 @@
 @property (weak, nonatomic) IBOutlet UIView *replicatorLayerView;
 @property (weak, nonatomic) IBOutlet UIView *rightItemView;
 
-@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *siderValueLabels;
+@property (weak, nonatomic) IBOutlet UISlider *instanceDelaySlider;
+
 @property (weak, nonatomic) IBOutlet UILabel *layerSizeSliderValueLabel;
 @property (weak, nonatomic) IBOutlet UILabel *instanceCountSliderValueLabel;
 @property (weak, nonatomic) IBOutlet UILabel *instanceDelaySliderValueLabel;
@@ -29,6 +30,7 @@
 @end
 
 static NSString *VOLUMBARANIMATION = @"volumBarAnimation";
+static NSString *FADEANIMATION = @"fadeAnimation";
 
 @implementation ZJCAReplicatorLayerViewController
 
@@ -37,6 +39,7 @@ static NSString *VOLUMBARANIMATION = @"volumBarAnimation";
     
     [self createVolumBars];
     [self activityIndicator];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotification) name:@"enterForeground" object:nil];
 }
 
 - (IBAction)tap:(UITapGestureRecognizer *)sender {
@@ -50,11 +53,12 @@ static NSString *VOLUMBARANIMATION = @"volumBarAnimation";
 // 播放音乐动态按钮
 - (void)createVolumBars {
     self.rightItemView.backgroundColor = [UIColor clearColor];
+    
     CAReplicatorLayer *replicatorLayer = [CAReplicatorLayer layer];
     replicatorLayer.frame = self.rightItemView.bounds;
     replicatorLayer.position = CGPointMake(self.rightItemView.center.x - self.rightItemView.left + 30, self.rightItemView.center.y);
     replicatorLayer.instanceCount = 3;      // The number of copies to create
-    replicatorLayer.instanceDelay = 0.33;
+    replicatorLayer.instanceDelay = 0.33;   // instanceDelay is the temporal offset between each copy that the replicator layer renders
     replicatorLayer.masksToBounds = YES;
     replicatorLayer.instanceTransform = CATransform3DMakeTranslation(15.0, 0.0, 0.0);
     [self.rightItemView.layer addSublayer:replicatorLayer];
@@ -80,17 +84,19 @@ static NSString *VOLUMBARANIMATION = @"volumBarAnimation";
     _replicatorLayer.frame = self.replicatorLayerView.bounds;
     
     // 2
-    _replicatorLayer.instanceCount = 30;                         // The number of copies to create, including the source layers.
-    _replicatorLayer.instanceDelay = (CFTimeInterval)(1/30.0);     // Specifies the delay, in seconds, between replicated copies. Animatable.
+    _replicatorLayer.instanceCount = 30;                            // The number of copies to create, including the source layers.
+    _replicatorLayer.instanceDelay = (CFTimeInterval)(1/30.0);      // Specifies the delay, in seconds, between replicated copies. Animatable.
     _replicatorLayer.preservesDepth = NO;        // 设图层为2D
-    _replicatorLayer.instanceColor = [UIColor whiteColor].CGColor;   // source color component:red:1 green:1 blue:1 alpha:1
+    _replicatorLayer.instanceColor = [UIColor whiteColor].CGColor;   // source color component:red:1 green:1 blue:1 alpha:1, 实例开始颜色为白色
+    
+    self.instanceDelaySlider.value = _replicatorLayer.instanceDelay;
     self.instanceCountSliderValueLabel.text = [NSString stringWithFormat:@"%@", [NSNumber numberWithInt:_replicatorLayer.instanceCount]];
     self.instanceDelaySliderValueLabel.text = [NSString stringWithFormat:@"%.2f", _replicatorLayer.instanceDelay];
     // 3
     _replicatorLayer.instanceRedOffset = 0.0;    // Defines the offset added to the red component of the color for each replicated instance
     _replicatorLayer.instanceGreenOffset = -0.5;
     _replicatorLayer.instanceBlueOffset = -0.5;
-    _replicatorLayer.instanceAlphaOffset = 0.0;  // end color component: red:1 green:0.5 blue:0.5 alpha:1.0 462907284
+    _replicatorLayer.instanceAlphaOffset = 0.0;  // end color component: red:1 green:0.5 blue:0.5 alpha:1.0 462907284,在与偏差色共同作用下的颜色
     
     // 4
     CGFloat angle = (M_PI * 2.0) / 29;
@@ -99,9 +105,7 @@ static NSString *VOLUMBARANIMATION = @"volumBarAnimation";
     
     // 5
     _instanceLayer = [CALayer layer];
-    CGFloat layerWidth = 10.0;
-    CGFloat midX = CGRectGetMidX(self.replicatorLayerView.bounds) - layerWidth / 2.0;
-    _instanceLayer.frame = CGRectMake(midX, 0, layerWidth, layerWidth * 3.0);    // replicatorLayer顶部的那个copies
+    _instanceLayer.frame = [self getAdjustInstanceLayerFrame:10];
     _instanceLayer.backgroundColor = [UIColor whiteColor].CGColor;
     [_replicatorLayer addSublayer:_instanceLayer];
     self.layerSizeSliderValueLabel.text = @"10 x 30";
@@ -114,7 +118,7 @@ static NSString *VOLUMBARANIMATION = @"volumBarAnimation";
     
     // 7
     _instanceLayer.opacity = 0.0;
-    [_instanceLayer addAnimation:_fadeAnimation forKey:@"FadeAnimation"];
+    [_instanceLayer addAnimation:_fadeAnimation forKey:FADEANIMATION];
     
     /*
      创建一个CAReplicatorLayer实例，设框架为someView边界。
@@ -127,40 +131,68 @@ static NSString *VOLUMBARANIMATION = @"volumBarAnimation";
      */
 }
 
+- (CGRect)getAdjustInstanceLayerFrame:(CGFloat)value {
+    CGRect frame = _instanceLayer.frame;
+    CGFloat midX = CGRectGetMidX(self.replicatorLayerView.bounds) - value / 2.0;     // replicatorLayer顶部的那个copies
+    frame.origin = CGPointMake(midX, 0);
+    frame.size = CGSizeMake(value, value * 3);
+    
+    return frame;
+}
+
 - (IBAction)sliderValueChanged:(UISlider *)sender {
-    if (sender.tag ==0) {
-        CGFloat midX = CGRectGetMidX(self.replicatorLayerView.bounds) - sender.value / 2.0;
-        CGRect frame = _instanceLayer.frame;
-        frame.origin = CGPointMake(midX, 0);
-        frame.size = CGSizeMake(sender.value, sender.value* 3);
-        _instanceLayer.frame = frame;
+    if (sender.tag == 0) {
+        _instanceLayer.frame = [self getAdjustInstanceLayerFrame:sender.value];
         self.layerSizeSliderValueLabel.text = [NSString stringWithFormat:@"%.0f x %.0f", sender.value, sender.value*3];
     }else if (sender.tag == 1) {
-        _replicatorLayer.instanceCount = sender.value;
+        _replicatorLayer.instanceCount = (NSInteger)sender.value;
+        CGFloat angle = (M_PI * 2) / (sender.value - 1);
+        _replicatorLayer.instanceTransform = CATransform3DRotate(_replicatorLayer.transform, angle, 0.0, 0.0, 1.0);
+        _instanceLayer.frame = [self getAdjustInstanceLayerFrame:_instanceLayer.frame.size.width];
+        
         self.instanceCountSliderValueLabel.text = [NSString stringWithFormat:@"%.0f", sender.value];
     }else if (sender.tag == 2) {
         _replicatorLayer.instanceDelay = (CFTimeInterval)sender.value;
         self.instanceDelaySliderValueLabel.text = [NSString stringWithFormat:@"%.2f", sender.value];
         if (sender.value < FLT_EPSILON) {
             _instanceLayer.opacity = 1.0;
-            [_instanceLayer removeAnimationForKey:@"FadeAnimation"];
+            [_instanceLayer removeAnimationForKey:FADEANIMATION];
         }else {
-            _fadeAnimation.duration = sender.value / _replicatorLayer.instanceCount;
+            _fadeAnimation.duration = _replicatorLayer.instanceDelay * (_replicatorLayer.instanceCount - 1);
             _instanceLayer.opacity = 0.0;
-            [_instanceLayer removeAnimationForKey:@"FadeAnimation"];
-            [_instanceLayer addAnimation:_fadeAnimation forKey:@"FadeAnimation"];
+            [_instanceLayer removeAnimationForKey:FADEANIMATION];
+            [_instanceLayer addAnimation:_fadeAnimation forKey:FADEANIMATION];
         }
     }
 }
 
-- (IBAction)switchValueChanged:(UISwitch *)sender {
-    
+- (CGFloat)getOffsetValueForSwitch:(UISwitch *)sender {
+    if (sender.tag < 3) {
+        return sender.isOn ? 0.0 : -0.5;
+    }else {
+        return sender.isOn ? -1.0 : 0.0;
+    }
 }
 
+- (IBAction)switchValueChanged:(UISwitch *)sender {
+    if (sender.tag ==  0) {
+        _replicatorLayer.instanceRedOffset = [self getOffsetValueForSwitch:sender];
+    }else if (sender.tag == 1) {
+        _replicatorLayer.instanceGreenOffset = [self getOffsetValueForSwitch:sender];
+    }else if (sender.tag == 2) {
+        _replicatorLayer.instanceBlueOffset = [self getOffsetValueForSwitch:sender];
+    }else if (sender.tag == 3) {
+        _replicatorLayer.instanceAlphaOffset = [self getOffsetValueForSwitch:sender];
+    }
+}
+
+- (void)handleNotification {
+    [_barLayer addAnimation:_moveAnimation forKey:VOLUMBARANIMATION];
+    [_instanceLayer addAnimation:_fadeAnimation forKey:FADEANIMATION];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 /*
