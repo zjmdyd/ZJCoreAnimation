@@ -27,7 +27,7 @@
 
 @end
 
-NS_ENUM(NSInteger, ROW) {
+NS_ENUM(NSInteger, Row) {
     ContentsGravity,
     ContentsGravityPicker,
     DisplayContents,
@@ -51,7 +51,7 @@ NS_ENUM(NSInteger, Switch) {
     HiddenSwitch,
 };
 
-NS_ENUM(NSInteger, SLIDER) {
+NS_ENUM(NSInteger, Slider) {
     OpacitySlider,
     CornerRadiusSlider,
     BorderWidthSlider,
@@ -74,7 +74,7 @@ NS_ENUM(NSInteger, SLIDER) {
 
 - (IBAction)switchChanged:(UISwitch *)sender {
     if (sender.tag == DisplayContentsSwitch) {
-        self.layerController.layer.contents = (__bridge id _Nullable)(sender.isOn ? self.layerController.star : nil);
+        self.layerController.layer.contents = (__bridge id _Nullable)((sender.isOn ? self.layerController.star : nil));
     }else if(sender.tag == GeometryFlippedSwitch) {
         self.layerController.layer.geometryFlipped = sender.isOn;
     }else if (sender.tag == HiddenSwitch) {

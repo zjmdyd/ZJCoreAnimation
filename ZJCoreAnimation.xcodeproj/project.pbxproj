@@ -28,6 +28,7 @@
 		66E59C6E1BB3D1D500E25B61 /* ZJCALayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E59C6D1BB3D1D500E25B61 /* ZJCALayerViewController.m */; settings = {ASSET_TAGS = (); }; };
 		66E59C711BB3F9BD00E25B61 /* ZJCAScrollLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E59C701BB3F9BD00E25B61 /* ZJCAScrollLayerViewController.m */; settings = {ASSET_TAGS = (); }; };
 		66E59C761BB3FA7E00E25B61 /* ScrollingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E59C751BB3FA7E00E25B61 /* ScrollingView.m */; settings = {ASSET_TAGS = (); }; };
+		66EA5F4E1BC36DA700D7C8C7 /* ZJCAShapeLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EA5F4D1BC36DA700D7C8C7 /* ZJCAShapeLayerViewController.m */; settings = {ASSET_TAGS = (); }; };
 		66EC78331BB62E8A00E15E7B /* ZJCAReplicatorLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EC78321BB62E8A00E15E7B /* ZJCAReplicatorLayerViewController.m */; settings = {ASSET_TAGS = (); }; };
 		66ED4B6C1B60CEBD00E18480 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66ED4B6B1B60CEBD00E18480 /* main.m */; };
 		66ED4B6F1B60CEBD00E18480 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66ED4B6E1B60CEBD00E18480 /* AppDelegate.m */; };
@@ -92,6 +93,8 @@
 		66E59C701BB3F9BD00E25B61 /* ZJCAScrollLayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCAScrollLayerViewController.m; sourceTree = "<group>"; };
 		66E59C741BB3FA7E00E25B61 /* ScrollingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollingView.h; sourceTree = "<group>"; };
 		66E59C751BB3FA7E00E25B61 /* ScrollingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollingView.m; sourceTree = "<group>"; };
+		66EA5F4C1BC36DA700D7C8C7 /* ZJCAShapeLayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCAShapeLayerViewController.h; sourceTree = "<group>"; };
+		66EA5F4D1BC36DA700D7C8C7 /* ZJCAShapeLayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCAShapeLayerViewController.m; sourceTree = "<group>"; };
 		66EC78311BB62E8A00E15E7B /* ZJCAReplicatorLayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCAReplicatorLayerViewController.h; sourceTree = "<group>"; };
 		66EC78321BB62E8A00E15E7B /* ZJCAReplicatorLayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCAReplicatorLayerViewController.m; sourceTree = "<group>"; };
 		66EC78351BB6463800E15E7B /* ZJCoreAnimation.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCoreAnimation.pch; sourceTree = "<group>"; };
@@ -249,6 +252,15 @@
 			name = CALayer;
 			sourceTree = "<group>";
 		};
+		66EA5F4F1BC36DAE00D7C8C7 /* CAShapeLayer */ = {
+			isa = PBXGroup;
+			children = (
+				66EA5F4C1BC36DA700D7C8C7 /* ZJCAShapeLayerViewController.h */,
+				66EA5F4D1BC36DA700D7C8C7 /* ZJCAShapeLayerViewController.m */,
+			);
+			name = CAShapeLayer;
+			sourceTree = "<group>";
+		};
 		66EC78301BB62E7B00E15E7B /* CAReplicatorLayer */ = {
 			isa = PBXGroup;
 			children = (
@@ -358,6 +370,7 @@
 			children = (
 				66F498961BC27A58009BA361 /* TiledLayer */,
 				66F498951BC27A4A009BA361 /* TiledLoadImage */,
+				66EA5F4F1BC36DAE00D7C8C7 /* CAShapeLayer */,
 			);
 			name = CATiledLayer;
 			sourceTree = "<group>";
@@ -536,6 +549,7 @@
 				66EE96811BB4F21200E69D5B /* ZJAVPlayerLayerViewController.m in Sources */,
 				66ED4B6C1B60CEBD00E18480 /* main.m in Sources */,
 				66F4988B1BC22C66009BA361 /* ZJTiledView.m in Sources */,
+				66EA5F4E1BC36DA700D7C8C7 /* ZJCAShapeLayerViewController.m in Sources */,
 				66F4988E1BC269EB009BA361 /* ZJTiledLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -44,6 +44,7 @@
                         <segue destination="lRq-Jh-3RP" kind="push" identifier="CAGradientLayer" id="zWN-bt-8s9"/>
                         <segue destination="7qc-Uu-KFv" kind="push" identifier="CAReplicatorLayer" id="qoQ-FI-0Fg"/>
                         <segue destination="T3a-h0-maG" kind="push" identifier="CATiledLayer" id="jkX-09-57N"/>
+                        <segue destination="T9S-rH-Wo8" kind="push" identifier="CAShapeLayer" id="Zvy-PE-jW3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EYb-5b-gMA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -409,6 +410,149 @@
             </objects>
             <point key="canvasLocation" x="162" y="2588"/>
         </scene>
+        <!--CAShapeLayer-->
+        <scene sceneID="YyQ-yi-qF4">
+            <objects>
+                <viewController id="T9S-rH-Wo8" customClass="ZJCAShapeLayerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bNd-Fc-ybL"/>
+                        <viewControllerLayoutGuide type="bottom" id="P7B-35-ceU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xj3-li-yeE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GZf-uC-Ju7">
+                                <rect key="frame" x="0.0" y="349" width="320" height="219"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Close path" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBg-E7-qAy">
+                                        <rect key="frame" x="8" y="6" width="70" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Line width" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dbf-2t-89l">
+                                        <rect key="frame" x="148" y="44" width="79" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5KA-oY-idD">
+                                        <rect key="frame" x="85" y="0.0" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="switchValueChange:" destination="T9S-rH-Wo8" eventType="valueChanged" id="Q7u-JN-eJx"/>
+                                        </connections>
+                                    </switch>
+                                    <segmentedControl opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Amf-UJ-aBK">
+                                        <rect key="frame" x="85" y="147" width="174" height="29"/>
+                                        <segments>
+                                            <segment title="Butt"/>
+                                            <segment title="Round"/>
+                                            <segment title="Square"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="segmentedControlValueChange:" destination="T9S-rH-Wo8" eventType="valueChanged" id="KPL-f7-kKD"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Line join" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Zf-uv-KNJ">
+                                        <rect key="frame" x="8" y="186" width="64" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="120" minValue="0.0" maxValue="359" translatesAutoresizingMaskIntoConstraints="NO" id="Ufx-Z9-fQh">
+                                        <rect key="frame" x="238" y="0.0" width="76" height="31"/>
+                                        <connections>
+                                            <action selector="sliderValueChange:" destination="T9S-rH-Wo8" eventType="valueChanged" id="D2r-Bq-U6F"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Line cap" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTR-pk-Knw">
+                                        <rect key="frame" x="8" y="150" width="66" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0GM-CK-f3Y">
+                                        <rect key="frame" x="85" y="183" width="174" height="29"/>
+                                        <segments>
+                                            <segment title="Miter"/>
+                                            <segment title="Round"/>
+                                            <segment title="Bevel"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="segmentedControlValueChange:" destination="T9S-rH-Wo8" eventType="valueChanged" id="Zzr-8x-mZL"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <slider opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" minValue="1" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="ia0-er-ye1">
+                                        <rect key="frame" x="238" y="40" width="75" height="31"/>
+                                        <connections>
+                                            <action selector="sliderValueChange:" destination="T9S-rH-Wo8" eventType="valueChanged" id="hW7-5Z-oQe"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Color (hue)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rN9-qB-lQP">
+                                        <rect key="frame" x="148" y="5" width="84" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dashed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sEZ-v0-K9H">
+                                        <rect key="frame" x="8" y="45" width="59" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8Dm-G0-h3k">
+                                        <rect key="frame" x="85" y="40" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="switchValueChange:" destination="T9S-rH-Wo8" eventType="valueChanged" id="6eR-Us-NFc"/>
+                                        </connections>
+                                    </switch>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fill" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cx5-Vb-q69">
+                                        <rect key="frame" x="8" y="83" width="22" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fill rule" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xUV-IE-JUR">
+                                        <rect key="frame" x="8" y="121" width="55" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="ZRx-Tu-o42">
+                                        <rect key="frame" x="85" y="111" width="174" height="29"/>
+                                        <segments>
+                                            <segment title="Non-zero"/>
+                                            <segment title="Even-odd"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="segmentedControlValueChange:" destination="T9S-rH-Wo8" eventType="valueChanged" id="ChY-ll-Hac"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <switch opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mK3-fB-TrC">
+                                        <rect key="frame" x="85" y="78" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="switchValueChange:" destination="T9S-rH-Wo8" eventType="valueChanged" id="8Vz-mN-AHR"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pJ3-qX-OPG">
+                                <rect key="frame" x="35" y="83" width="250" height="250"/>
+                                <color key="backgroundColor" red="0.044014595449999999" green="0.33531746270000001" blue="0.053189493720000001" alpha="0.0" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="CAShapeLayer" id="y4C-n8-OuY"/>
+                    <connections>
+                        <outlet property="closePathSwith" destination="5KA-oY-idD" id="lM0-o3-JYz"/>
+                        <outlet property="colorSlider" destination="Ufx-Z9-fQh" id="eDI-2S-bpo"/>
+                        <outlet property="fillRuleSegmentedControl" destination="ZRx-Tu-o42" id="ixi-aI-mUb"/>
+                        <outlet property="fillSwitch" destination="mK3-fB-TrC" id="EnO-kN-zzG"/>
+                        <outlet property="lineCapSegmentedControl" destination="Amf-UJ-aBK" id="khk-H3-Sd4"/>
+                        <outlet property="lineWidthSlider" destination="ia0-er-ye1" id="MSd-yW-krr"/>
+                        <outlet property="shapeLayerView" destination="pJ3-qX-OPG" id="wUN-TJ-BWM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kE0-g4-Cbc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="162" y="3274"/>
+        </scene>
         <!--CAReplicatorLayer-->
         <scene sceneID="gy3-cD-bRK">
             <objects>
@@ -567,7 +711,7 @@
         <!--Tiled Image Layer View Controller-->
         <scene sceneID="GIo-2t-kcp">
             <objects>
-                <viewController id="s3M-eX-Qh4" customClass="ZJCATiledImageLayerViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="s3M-eX-Qh4" customClass="ZJCATiledImageLayerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KRa-8c-BS0"/>
                         <viewControllerLayoutGuide type="bottom" id="kzN-MR-uam"/>

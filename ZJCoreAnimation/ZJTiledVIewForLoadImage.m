@@ -47,10 +47,13 @@ static NSString *fileName = @"windingRoad";
     if ([_fileManager fileExistsAtPath:filePath]) {
         return [UIImage imageWithContentsOfFile:filePath];
     }else {
-        CGImageRef tileImageRef = CGImageCreateWithImageInRect(_srcImageRef, rect);
-        UIImage *img = [UIImage imageWithCGImage:tileImageRef];
-        NSData *imageData = UIImageJPEGRepresentation(img, 1);
-        [imageData writeToFile:filePath atomically:NO];
+        __block UIImage *img;
+        dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            CGImageRef tileImageRef = CGImageCreateWithImageInRect(_srcImageRef, rect);
+            img = [UIImage imageWithCGImage:tileImageRef];
+            NSData *imageData = UIImageJPEGRepresentation(img, 1);
+            [imageData writeToFile:filePath atomically:NO];
+        });
         
         return img;
     }
