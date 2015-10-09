@@ -36,7 +36,7 @@ static NSString *CELLID = @"cellID";
 - (void)initAry {
     _sectionTitles = @[@"基础知识篇", @"Demo篇"];
     
-    NSArray *s1 = @[@"FrameAndBounds", @"AnchoPoint", @"CALayer"];
+    NSArray *s1 = @[@"FrameAndBounds", @"AnchoPoint", @"CALayer", @"CATransform3D"];
     NSArray *s2 = @[@"FlipAnimation", @"CALayerPlayer"];
     _titles = @[s1, s2];
     
@@ -44,6 +44,7 @@ static NSString *CELLID = @"cellID";
                       [ZJFrameBoundsViewController new],
                       [ZJAnchorPointViewController new],
                       [ZJCALayerFirstViewController new],
+                      [self.storyboard instantiateViewControllerWithIdentifier:@"CATransform3DType"]
                       ];
     
     NSArray *s1VC = @[

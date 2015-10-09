@@ -20,4 +20,10 @@
 
 #import "UIViewExt.h"
 
+typedef NS_ENUM(NSUInteger, TransformDType) {
+    Transform3DTranslate,
+    Transform3DScale,
+    Transform3DRotate
+};
+
 #endif
