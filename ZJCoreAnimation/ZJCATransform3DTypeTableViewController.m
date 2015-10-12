@@ -22,7 +22,7 @@ static NSString *CELLID = @"cellID";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _titles = @[@"平移", @"缩放", @"旋转1", @"旋转2"];
+    _titles = @[@"平移", @"缩放", @"正交投影", @"旋转1", @"旋转2"];
     
     self.tableView.tableFooterView = [UIView new];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CELLID];

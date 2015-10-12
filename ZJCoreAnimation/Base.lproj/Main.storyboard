@@ -45,6 +45,8 @@
                         <segue destination="7qc-Uu-KFv" kind="push" identifier="CAReplicatorLayer" id="qoQ-FI-0Fg"/>
                         <segue destination="T3a-h0-maG" kind="push" identifier="CATiledLayer" id="jkX-09-57N"/>
                         <segue destination="T9S-rH-Wo8" kind="push" identifier="CAShapeLayer" id="Zvy-PE-jW3"/>
+                        <segue destination="gti-74-IqR" kind="push" identifier="CATransformLayer" id="XDH-Ha-3Yb"/>
+                        <segue destination="vl4-WA-C1X" kind="push" identifier="CAEmitterLayer" id="OVA-6R-ZCg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EYb-5b-gMA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -708,6 +710,117 @@
             </objects>
             <point key="canvasLocation" x="612" y="2588"/>
         </scene>
+        <!--CATransformLayer-->
+        <scene sceneID="hEl-9o-qeP">
+            <objects>
+                <viewController id="gti-74-IqR" customClass="ZJCATransformLayerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LgO-3y-Guo"/>
+                        <viewControllerLayoutGuide type="bottom" id="UCc-O7-ugp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Zra-zT-Iwo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vFm-eZ-Arr">
+                                <rect key="frame" x="35" y="86" width="250" height="250"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t3s-tO-JsB">
+                                <rect key="frame" x="35" y="385" width="250" height="138"/>
+                                <subviews>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SUk-m8-xKp">
+                                        <rect key="frame" x="200" y="29" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="colorAlphaSwitchChanged:" destination="gti-74-IqR" eventType="valueChanged" id="vNZ-mH-rbu"/>
+                                        </connections>
+                                    </switch>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6Tu-Bm-9DO">
+                                        <rect key="frame" x="200" y="107" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="colorAlphaSwitchChanged:" destination="gti-74-IqR" eventType="valueChanged" id="PyE-Bx-W0y"/>
+                                        </connections>
+                                    </switch>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Yellow" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ryv-sk-bch">
+                                        <rect key="frame" x="144" y="34" width="49" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Blue" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="soF-zD-ucR">
+                                        <rect key="frame" x="25" y="112" width="35" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Purple" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qXJ-5R-rU9">
+                                        <rect key="frame" x="143" y="112" width="50" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Red" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZa-cd-sZ3">
+                                        <rect key="frame" x="28" y="34" width="32" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Green" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Luq-9U-Sma">
+                                        <rect key="frame" x="13" y="73" width="47" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Toggle alphas" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcm-dp-uWs">
+                                        <rect key="frame" x="0.0" y="0.0" width="117" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8Og-4k-bQp">
+                                        <rect key="frame" x="68" y="68" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="colorAlphaSwitchChanged:" destination="gti-74-IqR" eventType="valueChanged" id="MYe-eP-6gD"/>
+                                        </connections>
+                                    </switch>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Jly-Gd-ciM">
+                                        <rect key="frame" x="68" y="29" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="colorAlphaSwitchChanged:" destination="gti-74-IqR" eventType="valueChanged" id="1Hr-4Q-Z8W"/>
+                                        </connections>
+                                    </switch>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8ri-IV-Fgd">
+                                        <rect key="frame" x="200" y="68" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="colorAlphaSwitchChanged:" destination="gti-74-IqR" eventType="valueChanged" id="TNb-nT-WPW"/>
+                                        </connections>
+                                    </switch>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="H5j-iW-Vk1">
+                                        <rect key="frame" x="68" y="107" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="colorAlphaSwitchChanged:" destination="gti-74-IqR" eventType="valueChanged" id="P2l-kg-tNf"/>
+                                        </connections>
+                                    </switch>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Orange" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J4p-Xt-FHB">
+                                        <rect key="frame" x="136" y="73" width="57" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="CATransformLayer" id="tCh-oH-4FE"/>
+                    <connections>
+                        <outlet property="transformLayerView" destination="vFm-eZ-Arr" id="Gqk-6M-X6V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O4Y-M3-bQG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="992" y="3274"/>
+        </scene>
         <!--Tiled Image Layer View Controller-->
         <scene sceneID="GIo-2t-kcp">
             <objects>
@@ -762,7 +875,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tSC-Qm-ilp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1944" y="2588"/>
+            <point key="canvasLocation" x="1812" y="2588"/>
         </scene>
         <!--CATiledLayer-->
         <scene sceneID="RhC-kf-bku">
@@ -1181,7 +1294,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L6H-m4-zNG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1430" y="747"/>
+            <point key="canvasLocation" x="1412" y="406"/>
         </scene>
         <!--Transform3D View Controller-->
         <scene sceneID="c1n-fl-zaW">
@@ -1258,7 +1371,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NQX-gj-nVs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1430" y="108"/>
+            <point key="canvasLocation" x="1412" y="-234"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aeA-Mg-Yhq">
@@ -1738,6 +1851,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fxc-R7-iBM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1412" y="2588"/>
+        </scene>
+        <!--CAEmitterLayer-->
+        <scene sceneID="cyx-fr-W9F">
+            <objects>
+                <viewController id="vl4-WA-C1X" customClass="ZJCAEmitterLayerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7eU-YR-d3A"/>
+                        <viewControllerLayoutGuide type="bottom" id="3ox-aX-iUy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Sfw-Tb-4Rg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="CAEmitterLayer" id="nLS-am-QIv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MPU-IC-Zi1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1412" y="3274"/>
         </scene>
     </scenes>
     <resources>

@@ -44,6 +44,9 @@
 		66EE967D1BB4EA2C00E69D5B /* 1434511542665314.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 66EE967C1BB4EA2C00E69D5B /* 1434511542665314.jpg */; settings = {ASSET_TAGS = (); }; };
 		66EE96811BB4F21200E69D5B /* ZJAVPlayerLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EE96801BB4F21200E69D5B /* ZJAVPlayerLayerViewController.m */; settings = {ASSET_TAGS = (); }; };
 		66EE96851BB5231E00E69D5B /* ZJCAGradientLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EE96841BB5231E00E69D5B /* ZJCAGradientLayerViewController.m */; settings = {ASSET_TAGS = (); }; };
+		66F28BF51BCB920B006E7E2A /* ZJCATransformLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F28BF41BCB920B006E7E2A /* ZJCATransformLayerViewController.m */; settings = {ASSET_TAGS = (); }; };
+		66F28BF91BCBB4FD006E7E2A /* ZJCAEmitterLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F28BF81BCBB4FD006E7E2A /* ZJCAEmitterLayerViewController.m */; settings = {ASSET_TAGS = (); }; };
+		66F28BFC1BCBBA88006E7E2A /* ZJCATransform3DPerspectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F28BFB1BCBBA88006E7E2A /* ZJCATransform3DPerspectViewController.m */; settings = {ASSET_TAGS = (); }; };
 		66F30DF51BB15C1E002711CD /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 66F30DF31BB15C1E002711CD /* LICENSE */; settings = {ASSET_TAGS = (); }; };
 		66F498881BC22A72009BA361 /* ZJCATiledLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F498871BC22A72009BA361 /* ZJCATiledLayerViewController.m */; settings = {ASSET_TAGS = (); }; };
 		66F4988B1BC22C66009BA361 /* ZJTiledView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F4988A1BC22C66009BA361 /* ZJTiledView.m */; settings = {ASSET_TAGS = (); }; };
@@ -126,6 +129,12 @@
 		66EE96801BB4F21200E69D5B /* ZJAVPlayerLayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJAVPlayerLayerViewController.m; sourceTree = "<group>"; };
 		66EE96831BB5231E00E69D5B /* ZJCAGradientLayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCAGradientLayerViewController.h; sourceTree = "<group>"; };
 		66EE96841BB5231E00E69D5B /* ZJCAGradientLayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCAGradientLayerViewController.m; sourceTree = "<group>"; };
+		66F28BF31BCB920B006E7E2A /* ZJCATransformLayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCATransformLayerViewController.h; sourceTree = "<group>"; };
+		66F28BF41BCB920B006E7E2A /* ZJCATransformLayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCATransformLayerViewController.m; sourceTree = "<group>"; };
+		66F28BF71BCBB4FD006E7E2A /* ZJCAEmitterLayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCAEmitterLayerViewController.h; sourceTree = "<group>"; };
+		66F28BF81BCBB4FD006E7E2A /* ZJCAEmitterLayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCAEmitterLayerViewController.m; sourceTree = "<group>"; };
+		66F28BFA1BCBBA88006E7E2A /* ZJCATransform3DPerspectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCATransform3DPerspectViewController.h; sourceTree = "<group>"; };
+		66F28BFB1BCBBA88006E7E2A /* ZJCATransform3DPerspectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCATransform3DPerspectViewController.m; sourceTree = "<group>"; };
 		66F30DF31BB15C1E002711CD /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		66F498861BC22A72009BA361 /* ZJCATiledLayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCATiledLayerViewController.h; sourceTree = "<group>"; };
 		66F498871BC22A72009BA361 /* ZJCATiledLayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCATiledLayerViewController.m; sourceTree = "<group>"; };
@@ -176,6 +185,8 @@
 				66EE96821BB522F200E69D5B /* CAGradientLayer */,
 				66EC78301BB62E7B00E15E7B /* CAReplicatorLayer */,
 				66F498851BC22A4F009BA361 /* CATiledLayer */,
+				66F28BF21BCB91E3006E7E2A /* CATransformLayer */,
+				66F28BF61BCBB4E1006E7E2A /* CAEmitterLayer */,
 			);
 			name = LayerPlayer;
 			sourceTree = "<group>";
@@ -280,6 +291,8 @@
 				66E6CF201BC64B90002544DF /* ZJCATransform3DViewController.m */,
 				66F54B391BC7C16700238BDD /* ZJCATransform3DRotation2ViewController.h */,
 				66F54B3A1BC7C16700238BDD /* ZJCATransform3DRotation2ViewController.m */,
+				66F28BFA1BCBBA88006E7E2A /* ZJCATransform3DPerspectViewController.h */,
+				66F28BFB1BCBBA88006E7E2A /* ZJCATransform3DPerspectViewController.m */,
 			);
 			name = CATransform3D;
 			sourceTree = "<group>";
@@ -386,6 +399,24 @@
 				66EE96841BB5231E00E69D5B /* ZJCAGradientLayerViewController.m */,
 			);
 			name = CAGradientLayer;
+			sourceTree = "<group>";
+		};
+		66F28BF21BCB91E3006E7E2A /* CATransformLayer */ = {
+			isa = PBXGroup;
+			children = (
+				66F28BF31BCB920B006E7E2A /* ZJCATransformLayerViewController.h */,
+				66F28BF41BCB920B006E7E2A /* ZJCATransformLayerViewController.m */,
+			);
+			name = CATransformLayer;
+			sourceTree = "<group>";
+		};
+		66F28BF61BCBB4E1006E7E2A /* CAEmitterLayer */ = {
+			isa = PBXGroup;
+			children = (
+				66F28BF71BCBB4FD006E7E2A /* ZJCAEmitterLayerViewController.h */,
+				66F28BF81BCBB4FD006E7E2A /* ZJCAEmitterLayerViewController.m */,
+			);
+			name = CAEmitterLayer;
 			sourceTree = "<group>";
 		};
 		66F498851BC22A4F009BA361 /* CATiledLayer */ = {
@@ -559,7 +590,10 @@
 				66DB336A1B9C1C3D00597348 /* ZJFrameBoundsViewController.m in Sources */,
 				66ED4B721B60CEBD00E18480 /* ZJCoreAnimation.xcdatamodeld in Sources */,
 				66F716DD1B91A70E00DDFAFD /* UIViewExt.m in Sources */,
+				66F28BFC1BCBBA88006E7E2A /* ZJCATransform3DPerspectViewController.m in Sources */,
 				66ED4B751B60CEBD00E18480 /* ViewController.m in Sources */,
+				66F28BF51BCB920B006E7E2A /* ZJCATransformLayerViewController.m in Sources */,
+				66F28BF91BCBB4FD006E7E2A /* ZJCAEmitterLayerViewController.m in Sources */,
 				66F498881BC22A72009BA361 /* ZJCATiledLayerViewController.m in Sources */,
 				66F498911BC278BB009BA361 /* ZJCATiledImageLayerViewController.m in Sources */,
 				66F498941BC2793E009BA361 /* ZJTiledVIewForLoadImage.m in Sources */,

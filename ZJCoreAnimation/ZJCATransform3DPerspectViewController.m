@@ -1,14 +1,14 @@
 //
-//  ZJCATransform3DViewController.m
+//  ZJCATransform3DPerspectViewController.m
 //  ZJCoreAnimation
 //
 //  Created by YunTu on 10/8/15.
 //  Copyright © 2015 YunTu. All rights reserved.
 //
 
-#import "ZJCATransform3DViewController.h"
+#import "ZJCATransform3DPerspectViewController.h"
 
-@interface ZJCATransform3DViewController () {
+@interface ZJCATransform3DPerspectViewController () {
     CATransform3D _temptTransform3D;
 }
 
@@ -18,7 +18,7 @@
 
 @end
 
-@implementation ZJCATransform3DViewController
+@implementation ZJCATransform3DPerspectViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,11 +32,11 @@
         UIView *view = [[UIView alloc] initWithFrame:frame];
         if (i == 0) {
             view.backgroundColor = [UIColor redColor];
-            if (self.transformType == Transform3DPerspect || self.transformType == Transform3DRotate) {
+            if (self.transformType == Transform3DRotate) {
                 view.alpha = 0.5;
             }
         }else {
-
+            
 #ifdef ChangeAnchorPoint
             frame.origin.x -= frame.size.width / 2;
             frame.origin.y -= frame.size.height / 2;
@@ -74,12 +74,7 @@
             maxValue = 2;
             
             slider.value = 1;
-        }else if(self.transformType == Transform3DPerspect) {
-            minValue = -M_PI;
-            maxValue = M_PI;
-            
-            slider.value = 0;
-        } else if (self.transformType == Transform3DRotate) {
+        }else if (self.transformType == Transform3DRotate) {
             minValue = -M_PI;
             maxValue = M_PI;
             
@@ -97,9 +92,6 @@
             self.frontView.layer.transform = CATransform3DTranslate(self.frontView.layer.transform, sender.value, _temptTransform3D.m42, _temptTransform3D.m43);
         }else if (self.transformType == Transform3DScale) {
             self.frontView.layer.transform = CATransform3DScale(self.frontView.layer.transform, sender.value, _temptTransform3D.m22, 1);
-        }else if (self.transformType == Transform3DPerspect) {
-            CATransform3D rotate = CATransform3DMakeRotation(sender.value, 1, 0, 0);
-            self.frontView.layer.transform = CATransform3DPerspect(rotate, CGPointZero, 200);
         }else {
             self.frontView.layer.transform = CATransform3DRotate(self.frontView.layer.transform, sender.value, 1, 0, 0);    // angle大于0逆时针旋转,小于0顺时针，绕着坐标轴(锚点)旋转
         }
@@ -108,9 +100,6 @@
             self.frontView.layer.transform = CATransform3DTranslate(self.frontView.layer.transform, _temptTransform3D.m41, sender.value, _temptTransform3D.m43);
         }else if (self.transformType == Transform3DScale) {
             self.frontView.layer.transform = CATransform3DScale(self.frontView.layer.transform, _temptTransform3D.m11, sender.value, 1);
-        }else if (self.transformType == Transform3DPerspect) {
-            CATransform3D rotate = CATransform3DMakeRotation(sender.value, 0, 1, 0);
-            self.frontView.layer.transform = CATransform3DPerspect(rotate, CGPointZero, 200);
         }else {
             self.frontView.layer.transform = CATransform3DRotate(self.frontView.layer.transform, sender.value, 0, 1, 0);
         }
@@ -119,26 +108,11 @@
             self.frontView.layer.transform = CATransform3DTranslate(self.frontView.layer.transform, _temptTransform3D.m41, _temptTransform3D.m42, sender.value);
         }else if (self.transformType == Transform3DScale) {
             self.frontView.layer.transform = CATransform3DScale(self.frontView.layer.transform, _temptTransform3D.m11, _temptTransform3D.m22, sender.value);
-        }else if (self.transformType == Transform3DPerspect) {
-            CATransform3D rotate = CATransform3DMakeRotation(sender.value, 0, 0, 1);
-            self.frontView.layer.transform = CATransform3DPerspect(rotate, CGPointZero, 200);
         }else {
             self.frontView.layer.transform = CATransform3DRotate(self.frontView.layer.transform, sender.value, _temptTransform3D.m13, 0, 1);
         }
     }
     _temptTransform3D = self.frontView.layer.transform;
-}
-
-CATransform3D CATransform3DMakePerspective(CGPoint center, float disZ) {
-    CATransform3D transToCenter = CATransform3DMakeTranslation(-center.x, -center.y, 0);
-    CATransform3D transBack = CATransform3DMakeTranslation(center.x, center.y, 0);
-    CATransform3D scale = CATransform3DIdentity;
-    scale.m34 = -1.0f / disZ;
-    return CATransform3DConcat(CATransform3DConcat(transToCenter, scale), transBack);
-}
-
-CATransform3D CATransform3DPerspect(CATransform3D t, CGPoint center, float disZ) {
-    return CATransform3DConcat(t, CATransform3DMakePerspective(center, disZ));
 }
 
 - (IBAction)resetAction:(UIButton *)sender {
@@ -156,7 +130,7 @@ CATransform3D CATransform3DPerspect(CATransform3D t, CGPoint center, float disZ)
 
 /*
  if (i == 0) {
-
+ 
  }else if (i == 1) {
  view.layer.transform = CATransform3DMakeTranslation(50, 50, 20);
  }else if (i == 2) {
@@ -166,9 +140,9 @@ CATransform3D CATransform3DPerspect(CATransform3D t, CGPoint center, float disZ)
  sy：Y轴缩放。
  sz：整体比例变换时，也就是m11（sx）== m22（sy）时，若m33（sz）>1，图形整体缩小，若0<1，图形整体放大，若m33（sz）<0，发生关于原点的对称等比变换。
  
-}else if (i == 3) {
-    view.layer.transform = CATransform3DMakeRotation(M_PI/6, 0, 1, 0);
-}
+ }else if (i == 3) {
+ view.layer.transform = CATransform3DMakeRotation(M_PI/6, 0, 1, 0);
+ }
  */
 
 /*
@@ -177,20 +151,20 @@ CATransform3D CATransform3DPerspect(CATransform3D t, CGPoint center, float disZ)
  注意:仿射矩阵并不代表点得坐标，只是代表了一个转换关系，是一个转换矩阵而已
  struct CATransform3D
  {
-    CGFloat m11, m12, m13, m14;
-    CGFloat m21, m22, m23, m24;
-    CGFloat m31, m32, m33, m34;
-    CGFloat m41, m42, m43, m44;
+ CGFloat m11, m12, m13, m14;
+ CGFloat m21, m22, m23, m24;
+ CGFloat m31, m32, m33, m34;
+ CGFloat m41, m42, m43, m44;
  };
  
  一个视图的原始transform = CGAffineTransformIdentity : [1 0 0 0; 0 1 0 0; 0 0 1 0; 0 0 0 1]
  
  struct CATransform3D
  {
-    CGFloat m11（x缩放）, m12（y切变）, m13（旋转）, m14（）;
-    CGFloat m21（x切变）, m22（y缩放）, m23（）, m24（）;
-    CGFloat m31（旋转）, m32（）, m33（）, m34（透视效果，要操作的这个对象要有旋转的角度，否则没有效果。正直/负值都有意义）;
-    CGFloat m41（x平移）, m42（y平移）, m43（z平移）, m44（）;
+ CGFloat m11（x缩放）, m12（y切变）, m13（旋转）, m14（）;
+ CGFloat m21（x切变）, m22（y缩放）, m23（）, m24（）;
+ CGFloat m31（旋转）, m32（）, m33（）, m34（透视效果，要操作的这个对象要有旋转的角度，否则没有效果。正直/负值都有意义）;
+ CGFloat m41（x平移）, m42（y平移）, m43（z平移）, m44（）;
  };
  __          __
  |  1  0  0  0|
@@ -205,13 +179,13 @@ CATransform3D CATransform3DPerspect(CATransform3D t, CGPoint center, float disZ)
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
