@@ -14,6 +14,7 @@
 
 // Demo篇
 #import "ZJFlipAnimationViewController.h"
+#import "ZJLoadingAnimationViewController.h"
 
 @interface ViewController ()<UITableViewDataSource, UITableViewDelegate> {
     NSArray *_sectionTitles, *_titles, *_vcs;
@@ -29,7 +30,7 @@ static NSString *CELLID = @"cellID";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     [self initAry];
 }
 
@@ -37,7 +38,7 @@ static NSString *CELLID = @"cellID";
     _sectionTitles = @[@"基础知识篇", @"Demo篇"];
     
     NSArray *s1 = @[@"FrameAndBounds", @"AnchoPoint", @"CALayer", @"CATransform3D"];
-    NSArray *s2 = @[@"FlipAnimation", @"CALayerPlayer"];
+    NSArray *s2 = @[@"FlipAnimation", @"CALayerPlayer", @"LoadingAnimation"];
     _titles = @[s1, s2];
     
     NSArray *s0VC = @[
@@ -50,6 +51,7 @@ static NSString *CELLID = @"cellID";
     NSArray *s1VC = @[
                       [ZJFlipAnimationViewController new],
                       @"ZJCALayerPlayer",
+                      [ZJLoadingAnimationViewController new],
                       ];
     _vcs = @[s0VC, s1VC];
 }
