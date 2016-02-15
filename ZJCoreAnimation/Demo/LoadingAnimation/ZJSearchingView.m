@@ -13,10 +13,23 @@
 @property (nonatomic, assign) CGFloat startAngle;
 @property (nonatomic, assign) CGFloat endAngle;
 @property (nonatomic, strong) CAShapeLayer *shapeLayer;
+@property (nonatomic, strong) CALayer *bottomLayer;
 
 @end
 
 @implementation ZJSearchingView
+
+@synthesize contents = _contents;
+
+- (nullable instancetype)initWithFrame:(CGRect)frame content:(nullable id)content {
+    self = [super initWithFrame:frame];
+    if (self) {
+        _contents = content;
+        [self initSetting];
+    }
+    
+    return self;
+}
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -29,13 +42,31 @@
 
 - (void)initSetting {
     self.backgroundColor = [UIColor orangeColor];
-    self.layer.anchorPoint = CGPointMake(0.5, 0.5);
+    
+    // 默认顺时针
+    self.clockwise = YES;
+    self.angleSpan = M_PI*0.75;
+    self.lineWidth = 2.0;
+    self.duration = 1.0;
+    
+    self.bottomLayer = [CALayer layer];
+    self.bottomLayer.frame = self.bounds;
+    self.bottomLayer.contents = self.contents;
+    self.bottomLayer.contentsGravity = kCAGravityCenter;
+//    self.bottomLayer.geometryFlipped = NO;
+//    self.bottomLayer.borderColor = [UIColor whiteColor].CGColor;
+//    self.bottomLayer.backgroundColor = [UIColor colorWithRed:11/255.0 green:86/255.0 blue:14/255.0 alpha:1.0].CGColor;
+//    self.bottomLayer.shadowOpacity = 0.75;
+//    self.bottomLayer.shadowOffset = CGSizeMake(0, 3);
+//    self.bottomLayer.shadowRadius = 3.0;
+    self.bottomLayer.magnificationFilter = kCAFilterLinear;
+    
+    [self.layer addSublayer:self.bottomLayer];
     
     // x轴0度角, 顺时针向下为正,逆时针向下为负
-    UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds)) radius:(self.bounds.size.width - self.lineWidth) / 2 startAngle:self.startAngle endAngle:self.startAngle - self.angleSpan clockwise:YES];
+    UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds)) radius:(self.bounds.size.width - self.lineWidth) / 2 startAngle:0 endAngle:self.angleSpan clockwise:self.clockwise];
     path.lineWidth = self.lineWidth;
-    [path stroke];
- 
+    
     self.shapeLayer = [CAShapeLayer layer];
     self.shapeLayer.frame = self.layer.bounds;  // 设置frame,不能设置bounds,设置bounds位置会不正确
     self.shapeLayer.backgroundColor = [UIColor clearColor].CGColor;
@@ -45,46 +76,65 @@
     [self.layer addSublayer:self.shapeLayer];
 }
 
+#pragma mark - setter
+
+- (void)setSearching:(BOOL)searching {
+    if (searching) {
+        [self startAnimation];
+    }else {
+        [self stopAnimation];
+    }
+    
+    _searching = searching;
+}
+
+- (void)setContents:(id)contents {
+    _contents = contents;
+    self.bottomLayer.contents = _contents;
+}
+
+- (id)contents {
+    return _contents;
+}
+
 #pragma mark - getter
 
-- (CGFloat)startAngle {
-    if (_startAngle < FLT_EPSILON) {
-        _startAngle = 0;
-    }
-    
-    return _startAngle;
-}
-
-- (CGFloat)endAngle {
-    if (fabs(_endAngle) < FLT_EPSILON) {
-        _endAngle = -M_PI;
-    }
-    
-    return _endAngle;
-}
-
 - (CGFloat)angleSpan {
-    if (_angleSpan < FLT_EPSILON) {
-        _angleSpan = M_PI;
+    if (self.isClosewise) {
+        return _angleSpan;
+    }else {
+        return -_angleSpan;
     }
-    
-    return _angleSpan;
 }
 
-- (CGFloat)lineWidth {
-    if (_lineWidth < FLT_EPSILON) {
-        _lineWidth = 2;
-    }
-    
-    return _lineWidth;
-}
+#pragma mark - public
 
 - (void)startSearching {
-    self.searching = YES;
+    [self startAnimation];
     
-    dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector:@selector(updateLayer) userInfo:nil repeats:NO];
-    });
+    _searching = YES;
+}
+
+- (void)stopSearching {
+    [self stopAnimation];
+    
+    _searching = NO;
+}
+
+#pragma mark - private
+
+- (void)startAnimation {
+    if (self.isSearching == NO) {
+        dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector:@selector(updateLayer) userInfo:nil repeats:NO];
+        });
+    }
+}
+
+- (void)stopAnimation {
+    if (self.isSearching) {
+        [self.shapeLayer removeAnimationForKey:@"rotationAnimation"];
+    }
 }
 
 - (void)updateLayer {
@@ -96,7 +146,7 @@
     CABasicAnimation *rotationAnimation;
     rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
     rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI * 2.0 ];
-    rotationAnimation.duration = 1;
+    rotationAnimation.duration = self.duration;
     rotationAnimation.cumulative = YES;
     rotationAnimation.repeatCount = MAXFLOAT;
     [self.shapeLayer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
@@ -113,10 +163,6 @@
     [self.shapeLayer addAnimation:animation forKey:nil];
     [CATransaction commit];
 #endif
-}
-
-- (void)stopSearching {
-    self.searching = NO;
 }
 
 // Only override drawRect: if you perform custom drawing.
