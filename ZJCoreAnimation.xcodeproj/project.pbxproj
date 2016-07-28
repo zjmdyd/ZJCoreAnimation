@@ -213,14 +213,14 @@
 		3831222D1C4F6941000C02AA /* CATransform3D */ = {
 			isa = PBXGroup;
 			children = (
-				3831222E1C4F6941000C02AA /* ZJCATransform3DPerspectViewController.h */,
-				3831222F1C4F6941000C02AA /* ZJCATransform3DPerspectViewController.m */,
-				383122301C4F6941000C02AA /* ZJCATransform3DRotation2ViewController.h */,
-				383122311C4F6941000C02AA /* ZJCATransform3DRotation2ViewController.m */,
 				383122321C4F6941000C02AA /* ZJCATransform3DTypeTableViewController.h */,
 				383122331C4F6941000C02AA /* ZJCATransform3DTypeTableViewController.m */,
 				383122341C4F6941000C02AA /* ZJCATransform3DViewController.h */,
 				383122351C4F6941000C02AA /* ZJCATransform3DViewController.m */,
+				383122301C4F6941000C02AA /* ZJCATransform3DRotation2ViewController.h */,
+				383122311C4F6941000C02AA /* ZJCATransform3DRotation2ViewController.m */,
+				3831222E1C4F6941000C02AA /* ZJCATransform3DPerspectViewController.h */,
+				3831222F1C4F6941000C02AA /* ZJCATransform3DPerspectViewController.m */,
 			);
 			path = CATransform3D;
 			sourceTree = "<group>";

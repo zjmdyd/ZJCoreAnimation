@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"%f", 220/sin(M_PI_4));
+
     [self initSetting];
 }
 
@@ -93,14 +93,14 @@
 - (IBAction)sliderValueChange:(UISlider *)sender {
     self.frontView.layer.transform = CATransform3DIdentity;
     if (sender.tag == 0) {
-        if (self.transformType == Transform3DTranslate) {
+        if (self.transformType == Transform3DTranslate) {       // 平移
             self.frontView.layer.transform = CATransform3DTranslate(self.frontView.layer.transform, sender.value, _temptTransform3D.m42, _temptTransform3D.m43);
-        }else if (self.transformType == Transform3DScale) {
+        }else if (self.transformType == Transform3DScale) {     // 缩放
             self.frontView.layer.transform = CATransform3DScale(self.frontView.layer.transform, sender.value, _temptTransform3D.m22, 1);
-        }else if (self.transformType == Transform3DPerspect) {
+        }else if (self.transformType == Transform3DPerspect) {  // 正交投影
             CATransform3D rotate = CATransform3DMakeRotation(sender.value, 1, 0, 0);
             self.frontView.layer.transform = CATransform3DPerspect(rotate, CGPointZero, 200);
-        }else {
+        }else {                                                 // 旋转
             self.frontView.layer.transform = CATransform3DRotate(self.frontView.layer.transform, sender.value, 1, 0, 0);    // angle大于0逆时针旋转,小于0顺时针，绕着坐标轴(锚点)旋转
         }
     }else if (sender.tag == 1) {
@@ -112,7 +112,7 @@
             CATransform3D rotate = CATransform3DMakeRotation(sender.value, 0, 1, 0);
             self.frontView.layer.transform = CATransform3DPerspect(rotate, CGPointZero, 200);
         }else {
-            self.frontView.layer.transform = CATransform3DRotate(self.frontView.layer.transform, sender.value, 0, 1, 0);
+            self.frontView.layer.transform = CATransform3DRotate(self.frontView.layer.transform, sender.value, 0, 1, 0);// 大于零逆时针旋转
         }
     }else if (sender.tag == 2) {
         if (self.transformType == Transform3DTranslate) {

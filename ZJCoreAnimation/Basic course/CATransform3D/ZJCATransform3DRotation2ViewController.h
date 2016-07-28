@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ *  旋转2:绕着空间坐标轴旋转
+ */
 @interface ZJCATransform3DRotation2ViewController : UIViewController
 
 @end
