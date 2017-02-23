@@ -60,7 +60,7 @@ static NSString *FADEANIMATION = @"fadeAnimation";
     replicatorLayer.instanceCount = 3;      // The number of copies to create
     replicatorLayer.instanceDelay = 0.33;   // instanceDelay is the temporal offset between each copy that the replicator layer renders
     replicatorLayer.masksToBounds = YES;
-    replicatorLayer.instanceTransform = CATransform3DMakeTranslation(15.0, 0.0, 0.0);
+    replicatorLayer.instanceTransform = CATransform3DMakeTranslation(15.0, 0.0, 0.0);   //  偏移
     [self.rightItemView.layer addSublayer:replicatorLayer];
     
     _barLayer = [CALayer layer];
@@ -86,11 +86,11 @@ static NSString *FADEANIMATION = @"fadeAnimation";
     // 2
     _replicatorLayer.instanceCount = 30;                            // The number of copies to create, including the source layers.
     _replicatorLayer.instanceDelay = (CFTimeInterval)(1/30.0);      // Specifies the delay, in seconds, between replicated copies. Animatable.
-    _replicatorLayer.preservesDepth = NO;        // 设图层为2D
-    _replicatorLayer.instanceColor = [UIColor whiteColor].CGColor;   // source color component:red:1 green:1 blue:1 alpha:1, 实例开始颜色为白色
+    _replicatorLayer.preservesDepth = NO;                           // 设图层为2D
+    _replicatorLayer.instanceColor = [UIColor whiteColor].CGColor;  // source color component:red:1 green:1 blue:1 alpha:1, 实例开始颜色为白色
     
     self.instanceDelaySlider.value = _replicatorLayer.instanceDelay;
-    self.instanceCountSliderValueLabel.text = [NSString stringWithFormat:@"%@", [NSNumber numberWithInt:_replicatorLayer.instanceCount]];
+    self.instanceCountSliderValueLabel.text = [NSString stringWithFormat:@"%@", [NSNumber numberWithInteger:_replicatorLayer.instanceCount]];
     self.instanceDelaySliderValueLabel.text = [NSString stringWithFormat:@"%.2f", _replicatorLayer.instanceDelay];
     // 3
     _replicatorLayer.instanceRedOffset = 0.0;    // Defines the offset added to the red component of the color for each replicated instance
@@ -100,7 +100,7 @@ static NSString *FADEANIMATION = @"fadeAnimation";
     
     // 4
     CGFloat angle = (M_PI * 2.0) / 29;
-    _replicatorLayer.instanceTransform = CATransform3DRotate(_replicatorLayer.transform, angle, 0.0, 0.0, 1.0);
+    _replicatorLayer.instanceTransform = CATransform3DRotate(_replicatorLayer.transform, angle, 0.0, 0.0, 1.0); //  旋转
     [self.replicatorLayerView.layer addSublayer:_replicatorLayer];
     
     // 5
