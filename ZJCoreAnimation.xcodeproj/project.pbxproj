@@ -7,16 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		383122791C4F6941000C02AA /* ZJAnchorPointViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 383122281C4F6941000C02AA /* ZJAnchorPointViewController.m */; };
-		3831227A1C4F6941000C02AA /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3831222A1C4F6941000C02AA /* 1.jpg */; };
-		3831227B1C4F6941000C02AA /* ZJCALayerFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3831222C1C4F6941000C02AA /* ZJCALayerFirstViewController.m */; };
-		3831227C1C4F6941000C02AA /* ZJCATransform3DPerspectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3831222F1C4F6941000C02AA /* ZJCATransform3DPerspectViewController.m */; };
-		3831227D1C4F6941000C02AA /* ZJCATransform3DRotation2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 383122311C4F6941000C02AA /* ZJCATransform3DRotation2ViewController.m */; };
-		3831227E1C4F6941000C02AA /* ZJCATransform3DTypeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 383122331C4F6941000C02AA /* ZJCATransform3DTypeTableViewController.m */; };
-		3831227F1C4F6941000C02AA /* ZJCATransform3DViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 383122351C4F6941000C02AA /* ZJCATransform3DViewController.m */; };
-		383122801C4F6941000C02AA /* 1434511542665314.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 383122371C4F6941000C02AA /* 1434511542665314.jpg */; };
-		383122811C4F6941000C02AA /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = 383122381C4F6941000C02AA /* red.png */; };
-		383122821C4F6941000C02AA /* ZJFrameBoundsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3831223A1C4F6941000C02AA /* ZJFrameBoundsViewController.m */; };
 		383122831C4F6941000C02AA /* bg1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3831223E1C4F6941000C02AA /* bg1.png */; };
 		383122841C4F6941000C02AA /* bg2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3831223F1C4F6941000C02AA /* bg2.png */; };
 		383122851C4F6941000C02AA /* bg3.png in Resources */ = {isa = PBXBuildFile; fileRef = 383122401C4F6941000C02AA /* bg3.png */; };
@@ -49,6 +39,8 @@
 		383122A01C4F6941000C02AA /* ZJCALayerPlayerListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 383122781C4F6941000C02AA /* ZJCALayerPlayerListViewController.m */; };
 		383122A41C4F6A53000C02AA /* ZJLoadingAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 383122A31C4F6A53000C02AA /* ZJLoadingAnimationViewController.m */; };
 		383122A71C4F6A94000C02AA /* ZJSearchingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 383122A61C4F6A94000C02AA /* ZJSearchingView.m */; };
+		383C6BB12249C9A600875F57 /* ZJFrameBoundsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 383C6BB02249C9A600875F57 /* ZJFrameBoundsViewController.m */; };
+		383C6BB42249C9B600875F57 /* ZJAnchorPointViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 383C6BB32249C9B600875F57 /* ZJAnchorPointViewController.m */; };
 		66ED4B6C1B60CEBD00E18480 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66ED4B6B1B60CEBD00E18480 /* main.m */; };
 		66ED4B6F1B60CEBD00E18480 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66ED4B6E1B60CEBD00E18480 /* AppDelegate.m */; };
 		66ED4B721B60CEBD00E18480 /* ZJCoreAnimation.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 66ED4B701B60CEBD00E18480 /* ZJCoreAnimation.xcdatamodeld */; };
@@ -73,23 +65,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		383122271C4F6941000C02AA /* ZJAnchorPointViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJAnchorPointViewController.h; sourceTree = "<group>"; };
-		383122281C4F6941000C02AA /* ZJAnchorPointViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJAnchorPointViewController.m; sourceTree = "<group>"; };
-		3831222A1C4F6941000C02AA /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
-		3831222B1C4F6941000C02AA /* ZJCALayerFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCALayerFirstViewController.h; sourceTree = "<group>"; };
-		3831222C1C4F6941000C02AA /* ZJCALayerFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCALayerFirstViewController.m; sourceTree = "<group>"; };
-		3831222E1C4F6941000C02AA /* ZJCATransform3DPerspectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCATransform3DPerspectViewController.h; sourceTree = "<group>"; };
-		3831222F1C4F6941000C02AA /* ZJCATransform3DPerspectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCATransform3DPerspectViewController.m; sourceTree = "<group>"; };
-		383122301C4F6941000C02AA /* ZJCATransform3DRotation2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCATransform3DRotation2ViewController.h; sourceTree = "<group>"; };
-		383122311C4F6941000C02AA /* ZJCATransform3DRotation2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCATransform3DRotation2ViewController.m; sourceTree = "<group>"; };
-		383122321C4F6941000C02AA /* ZJCATransform3DTypeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCATransform3DTypeTableViewController.h; sourceTree = "<group>"; };
-		383122331C4F6941000C02AA /* ZJCATransform3DTypeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCATransform3DTypeTableViewController.m; sourceTree = "<group>"; };
-		383122341C4F6941000C02AA /* ZJCATransform3DViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCATransform3DViewController.h; sourceTree = "<group>"; };
-		383122351C4F6941000C02AA /* ZJCATransform3DViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCATransform3DViewController.m; sourceTree = "<group>"; };
-		383122371C4F6941000C02AA /* 1434511542665314.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1434511542665314.jpg; sourceTree = "<group>"; };
-		383122381C4F6941000C02AA /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red.png; sourceTree = "<group>"; };
-		383122391C4F6941000C02AA /* ZJFrameBoundsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJFrameBoundsViewController.h; sourceTree = "<group>"; };
-		3831223A1C4F6941000C02AA /* ZJFrameBoundsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJFrameBoundsViewController.m; sourceTree = "<group>"; };
 		3831223E1C4F6941000C02AA /* bg1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg1.png; sourceTree = "<group>"; };
 		3831223F1C4F6941000C02AA /* bg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg2.png; sourceTree = "<group>"; };
 		383122401C4F6941000C02AA /* bg3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg3.png; sourceTree = "<group>"; };
@@ -141,6 +116,10 @@
 		383122A31C4F6A53000C02AA /* ZJLoadingAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJLoadingAnimationViewController.m; sourceTree = "<group>"; };
 		383122A51C4F6A94000C02AA /* ZJSearchingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJSearchingView.h; sourceTree = "<group>"; };
 		383122A61C4F6A94000C02AA /* ZJSearchingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJSearchingView.m; sourceTree = "<group>"; };
+		383C6BAF2249C9A600875F57 /* ZJFrameBoundsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJFrameBoundsViewController.h; sourceTree = "<group>"; };
+		383C6BB02249C9A600875F57 /* ZJFrameBoundsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJFrameBoundsViewController.m; sourceTree = "<group>"; };
+		383C6BB22249C9B600875F57 /* ZJAnchorPointViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJAnchorPointViewController.h; sourceTree = "<group>"; };
+		383C6BB32249C9B600875F57 /* ZJAnchorPointViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJAnchorPointViewController.m; sourceTree = "<group>"; };
 		66EC78351BB6463800E15E7B /* ZJCoreAnimation.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCoreAnimation.pch; sourceTree = "<group>"; };
 		66ED4B661B60CEBD00E18480 /* ZJCoreAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZJCoreAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66ED4B6A1B60CEBD00E18480 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -180,62 +159,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		383122251C4F6941000C02AA /* Basic course */ = {
-			isa = PBXGroup;
-			children = (
-				383122261C4F6941000C02AA /* AnchorPoint */,
-				383122291C4F6941000C02AA /* CALayer */,
-				3831222D1C4F6941000C02AA /* CATransform3D */,
-				383122361C4F6941000C02AA /* FrameAndBounds */,
-			);
-			path = "Basic course";
-			sourceTree = "<group>";
-		};
-		383122261C4F6941000C02AA /* AnchorPoint */ = {
-			isa = PBXGroup;
-			children = (
-				383122271C4F6941000C02AA /* ZJAnchorPointViewController.h */,
-				383122281C4F6941000C02AA /* ZJAnchorPointViewController.m */,
-			);
-			path = AnchorPoint;
-			sourceTree = "<group>";
-		};
-		383122291C4F6941000C02AA /* CALayer */ = {
-			isa = PBXGroup;
-			children = (
-				3831222A1C4F6941000C02AA /* 1.jpg */,
-				3831222B1C4F6941000C02AA /* ZJCALayerFirstViewController.h */,
-				3831222C1C4F6941000C02AA /* ZJCALayerFirstViewController.m */,
-			);
-			path = CALayer;
-			sourceTree = "<group>";
-		};
-		3831222D1C4F6941000C02AA /* CATransform3D */ = {
-			isa = PBXGroup;
-			children = (
-				383122321C4F6941000C02AA /* ZJCATransform3DTypeTableViewController.h */,
-				383122331C4F6941000C02AA /* ZJCATransform3DTypeTableViewController.m */,
-				383122341C4F6941000C02AA /* ZJCATransform3DViewController.h */,
-				383122351C4F6941000C02AA /* ZJCATransform3DViewController.m */,
-				383122301C4F6941000C02AA /* ZJCATransform3DRotation2ViewController.h */,
-				383122311C4F6941000C02AA /* ZJCATransform3DRotation2ViewController.m */,
-				3831222E1C4F6941000C02AA /* ZJCATransform3DPerspectViewController.h */,
-				3831222F1C4F6941000C02AA /* ZJCATransform3DPerspectViewController.m */,
-			);
-			path = CATransform3D;
-			sourceTree = "<group>";
-		};
-		383122361C4F6941000C02AA /* FrameAndBounds */ = {
-			isa = PBXGroup;
-			children = (
-				383122371C4F6941000C02AA /* 1434511542665314.jpg */,
-				383122381C4F6941000C02AA /* red.png */,
-				383122391C4F6941000C02AA /* ZJFrameBoundsViewController.h */,
-				3831223A1C4F6941000C02AA /* ZJFrameBoundsViewController.m */,
-			);
-			path = FrameAndBounds;
-			sourceTree = "<group>";
-		};
 		3831223B1C4F6941000C02AA /* Demo */ = {
 			isa = PBXGroup;
 			children = (
@@ -440,7 +363,10 @@
 				66ED4B6E1B60CEBD00E18480 /* AppDelegate.m */,
 				66ED4B731B60CEBD00E18480 /* ViewController.h */,
 				66ED4B741B60CEBD00E18480 /* ViewController.m */,
-				383122251C4F6941000C02AA /* Basic course */,
+				383C6BAF2249C9A600875F57 /* ZJFrameBoundsViewController.h */,
+				383C6BB02249C9A600875F57 /* ZJFrameBoundsViewController.m */,
+				383C6BB22249C9B600875F57 /* ZJAnchorPointViewController.h */,
+				383C6BB32249C9B600875F57 /* ZJAnchorPointViewController.m */,
 				3831223B1C4F6941000C02AA /* Demo */,
 				66F716DB1B91A70E00DDFAFD /* UIViewExt.h */,
 				66F716DC1B91A70E00DDFAFD /* UIViewExt.m */,
@@ -564,7 +490,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				66ED4B781B60CEBD00E18480 /* Main.storyboard in Resources */,
-				383122801C4F6941000C02AA /* 1434511542665314.jpg in Resources */,
 				66ED4B7D1B60CEBD00E18480 /* LaunchScreen.xib in Resources */,
 				383122891C4F6941000C02AA /* fg1.png in Resources */,
 				383122861C4F6941000C02AA /* bg4.png in Resources */,
@@ -573,9 +498,7 @@
 				383122901C4F6941000C02AA /* colorfulStreak.m4v in Resources */,
 				66ED4B7A1B60CEBD00E18480 /* Images.xcassets in Resources */,
 				3831228D1C4F6941000C02AA /* fg5.png in Resources */,
-				3831227A1C4F6941000C02AA /* 1.jpg in Resources */,
 				3831228A1C4F6941000C02AA /* fg2.png in Resources */,
-				383122811C4F6941000C02AA /* red.png in Resources */,
 				383122851C4F6941000C02AA /* bg3.png in Resources */,
 				3831228E1C4F6941000C02AA /* fg6.png in Resources */,
 				383122871C4F6941000C02AA /* bg5.png in Resources */,
@@ -601,27 +524,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3831227D1C4F6941000C02AA /* ZJCATransform3DRotation2ViewController.m in Sources */,
 				66ED4B6F1B60CEBD00E18480 /* AppDelegate.m in Sources */,
 				383122971C4F6941000C02AA /* ScrollingView.m in Sources */,
+				383C6BB42249C9B600875F57 /* ZJAnchorPointViewController.m in Sources */,
 				383122A01C4F6941000C02AA /* ZJCALayerPlayerListViewController.m in Sources */,
+				383C6BB12249C9A600875F57 /* ZJFrameBoundsViewController.m in Sources */,
 				383122A41C4F6A53000C02AA /* ZJLoadingAnimationViewController.m in Sources */,
 				383122911C4F6941000C02AA /* ZJAVPlayerLayerViewController.m in Sources */,
 				66ED4B721B60CEBD00E18480 /* ZJCoreAnimation.xcdatamodeld in Sources */,
 				3831229F1C4F6941000C02AA /* ZJCATransformLayerViewController.m in Sources */,
-				3831227C1C4F6941000C02AA /* ZJCATransform3DPerspectViewController.m in Sources */,
 				383122941C4F6941000C02AA /* ZJCALayerTableViewController.m in Sources */,
-				383122791C4F6941000C02AA /* ZJAnchorPointViewController.m in Sources */,
 				3831229E1C4F6941000C02AA /* ZJTiledVIewForLoadImage.m in Sources */,
-				3831227F1C4F6941000C02AA /* ZJCATransform3DViewController.m in Sources */,
-				3831227E1C4F6941000C02AA /* ZJCATransform3DTypeTableViewController.m in Sources */,
 				3831229C1C4F6941000C02AA /* ZJTiledView.m in Sources */,
-				3831227B1C4F6941000C02AA /* ZJCALayerFirstViewController.m in Sources */,
 				3831229A1C4F6941000C02AA /* ZJCATiledLayerViewController.m in Sources */,
 				66F716DD1B91A70E00DDFAFD /* UIViewExt.m in Sources */,
 				383122931C4F6941000C02AA /* ZJCAGradientLayerViewController.m in Sources */,
 				3831229D1C4F6941000C02AA /* ZJCATiledImageLayerViewController.m in Sources */,
-				383122821C4F6941000C02AA /* ZJFrameBoundsViewController.m in Sources */,
 				383122921C4F6941000C02AA /* ZJCAEmitterLayerViewController.m in Sources */,
 				66ED4B751B60CEBD00E18480 /* ViewController.m in Sources */,
 				383122991C4F6941000C02AA /* ZJCAShapeLayerViewController.m in Sources */,

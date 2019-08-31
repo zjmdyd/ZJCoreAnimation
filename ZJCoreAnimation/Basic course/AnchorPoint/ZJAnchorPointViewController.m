@@ -29,6 +29,7 @@
         }else if (i == 1) {
             view.backgroundColor = [UIColor blueColor];
             self.frontView = view;
+            self.frontView.alpha = 0.5;
         }
         [self.view addSubview:view];
     }
@@ -39,10 +40,9 @@
         锚点改变,中心点不会改变,中心点其实就是锚点在视图中的位置坐标,所以锚点不管怎么改变,改变之后视图都将钉在默认的锚点位置,所以center不会改变
         看锚点变后的位置关键是参照默认锚点位置
      */
-//    NSLog(@"center = %@, anchor = %@", NSStringFromCGPoint(self.bgView.center), NSStringFromCGPoint(self.bgView.layer.anchorPoint));
+    NSLog(@"center = %@, anchor = %@", NSStringFromCGPoint(self.bgView.center), NSStringFromCGPoint(self.bgView.layer.anchorPoint));
     NSLog(@"frame = %@", NSStringFromCGRect(self.bgView.frame));
-    // center = {160, 284}, anchor = {0.5, 0.5}
-    // frame = {{60, 184}, {200, 200}}
+
 /*
     self.bgView.layer.anchorPoint = CGPointMake(0, 0);
     NSLog(@"center = %@, anchor = %@", NSStringFromCGPoint(self.bgView.center), NSStringFromCGPoint(self.bgView.layer.anchorPoint));
@@ -50,11 +50,10 @@
     // center = {160, 284}, anchor = {0, 0}
     // frame = {{160, 284}, {200, 200}}
 */
-    self.bgView.layer.anchorPoint = CGPointMake(1, 1);
-//    NSLog(@"center = %@, anchor = %@", NSStringFromCGPoint(self.bgView.center), NSStringFromCGPoint(self.bgView.layer.anchorPoint));
+    self.bgView.layer.anchorPoint = CGPointMake(0.8, 0.5);
+    NSLog(@"center = %@, anchor = %@", NSStringFromCGPoint(self.bgView.center), NSStringFromCGPoint(self.bgView.layer.anchorPoint));
     NSLog(@"frame = %@", NSStringFromCGRect(self.bgView.frame));
-    // center = {160, 284}, anchor = {1.3, 0}
-    // frame =  {{-99.999992, 284}, {200, 200}}
+    // 改变锚点，center不会改变
 }
 
 - (void)didReceiveMemoryWarning {
